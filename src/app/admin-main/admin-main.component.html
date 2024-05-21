@@ -1,0 +1,140 @@
+
+<br>
+<!-- <button type="button" class="btn btn-primary addbtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Add Category
+</button> -->
+<button class="newbtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  <span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg> Add Category
+  </span>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" (hidden.bs.modal)="clearMessages()">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add new Category</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Enter category name" [(ngModel)]="newCategory.name">
+          <button class="btn btn-primary ma" (click)="addCategory()">Add</button>
+        </div>
+      </div>
+      <div *ngIf="operationStatus.add.error" class="alert alert-danger">
+        <div >{{operationStatus.add.error}}</div>
+      </div>
+      <div *ngIf="operationStatus.add.success" class="alert alert-success">
+        <div>Category added successfully</div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+<table class="table  table-hover">
+  <thead >
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of categories; let i=index">
+      <td scope="row">{{ i+1 }}</td>
+      <td>{{category.name}}</td>
+      <td>
+        
+        
+        <button  type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#staticBackdropnn" (click)="getSelectedCategory(category)">
+          Edit 
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdropnn" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropnnLabel" aria-hidden="true" (hidden.bs.modal)="clearMessages()">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropnnLabel">Edit Here</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Edit category name" [(ngModel)]="newCategory.name">
+                  <button class="btn btn-primary ma" (click)="editCategory(selectedCategory._id)">Edit</button>
+                </div>
+              </div>
+              <div *ngIf="operationStatus.edit.error" class="alert alert-danger">
+               <div >{{operationStatus.edit.error}}</div>
+              </div>
+              <div *ngIf="operationStatus.edit.success" class="alert alert-success">
+                <div>Category Edited successfully</div>
+              </div>
+              </div>
+            </div>
+            
+          </div>
+
+        <button  type="button" class="btn btn-outline-danger me-2" data-bs-toggle="modal" data-bs-target="#staticBackdropdel" (click)="getSelectedCategory(category)">
+          Delete
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdropdel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropdelLabel" aria-hidden="true" (hidden.bs.modal)="clearMessages()">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropdelLabel">Delete</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="input-group">
+                  <p>Are you Sure you want to delete this category?</p>
+                  <button class="btn btn-danger" (click)="deleteCategory(selectedCategory._id)">delete</button>
+                </div>
+              </div>
+              <div *ngIf="operationStatus.delete.error" class="alert alert-danger">
+                <div >{{operationStatus.delete.error}}</div>
+               </div>
+               <div *ngIf="operationStatus.delete.success" class="alert alert-success">
+                 <div>Category deleted successfully</div>
+               </div>
+              </div>
+            </div>
+          </div>
+    </tr>
+  </tbody>
+</table>
+<br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+<div style="display: flex; text-align: center; flex-wrap: wrap;">
+    <app-author *ngFor="let author of authors" [author]="author"></app-author>
+</div>
+
+<div *ngIf="totalAuthors" class="d-flex flex-row justify-content-center mt-3">
+    <ngb-pagination  [page]="currentPage" [collectionSize]="totalAuthors" [pageSize]="authorsPerPage" (pageChange)="getAllAuthors"></ngb-pagination>
+</div>

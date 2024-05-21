@@ -1,0 +1,205 @@
+
+
+    .books{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        max-width: 600px;
+        justify-content: space-evenly;
+        background-color: #fdca95;
+        border-radius: 10px;
+        margin-bottom: 3em;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+        width: 100%;
+        height: 343px;
+    }
+    .books:nth-of-type(2){
+        background-color: #fbadaf;
+    }
+    .books:nth-of-type(3){
+        background-color: #a4e0eb;
+    }
+    .books:nth-of-type(4){
+        background-color: #fdca95;
+    }
+    .book-img{
+        width: 100%;
+        max-width: 500px;
+        border-radius: 3px;
+        transition: transform 1s;
+        margin: 1.5em;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
+    .book-img:hover{
+        transform: scale(1.05);
+    }
+    .descp{
+        margin: 1.5em;
+        padding: 1em;
+        
+    }
+    .book-name{
+        font-weight: bold;
+        padding-bottom: 0.5em;
+        font-size: 1.1em;
+        letter-spacing: 1px;
+        color: white;
+    }
+    .author{
+        padding-bottom: 0.5em;
+        font-size: 1.1em;
+        letter-spacing: 1px;
+        color: white;
+    }
+    .category{
+        padding-bottom: 0.5em;
+        font-size: 1.1em;
+        letter-spacing: 0.5px;
+        color: white;
+    }
+    .rating{
+        padding-bottom: 1.2em;
+        font-size: 1em;
+        letter-spacing: 1px;
+        color: white;
+    }
+    .info{
+        font-size: 1em;
+        letter-spacing: 1px;
+        color: white;
+    }
+    .descp button{
+        margin-top: 1em;
+        background: none;
+        border: none;
+        color: #fdca95;
+        background-color: white;
+        padding: 0.6em 1.5em;
+        font-size: 1em;
+        border-radius: 20px;
+        font-weight: bolder;
+    }
+    .descp button:hover{
+        color: #fb9124;
+    }
+
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  margin: 10px;
+  height: auto;
+}
+[class^="item"] {
+  text-decoration: none;
+  margin-right: 20px;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+[class^="item"]:last-child {
+  margin-right: 0;
+}
+.item-2 {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+.item-2:before, .item-2:after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.3s ease-out;
+  left: 50%;
+  top: 50%;
+}
+.item-2:after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.item-2:before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.item-2:hover:before, .item-2:focus:before, .item-2:hover:after, .item-2:focus:after {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.fa-combo {
+    white-space: nowrap;
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    display: contents;
+    font-size: 3.5em;
+}
+.fa-combo .fa {
+    text-align: center;
+    height: 60px;
+    width: 60px;
+    line-height: 1.7em;
+    background: transparent;
+    box-shadow: none;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.6em;
+    margin-left: -0.8em;
+}
+
+.fa-combo .fa:hover {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.1));
+}
+
+
+.shelf {
+    margin-top: 25px;
+    background-color: #fbadaf;
+}
+
+.star-rating {
+    font-size: 18px;
+  } 
+
+  .star-rating:hover {
+    /* border: 1px solid #eee; */
+    border-radius: 20%;
+  }
+  
+  .star-rating .material-icons {
+    display: inline-block;
+    font-size: inherit;
+    color: #99b9;
+    cursor: pointer;
+  }
+  
+  .star-rating .material-icons.star-filled {
+    color: #ff0;
+  }
+  
+  .star-rating .material-icons.star-empty:hover,
+  .star-rating .material-icons.star-filled:hover {
+    color: #fc0;
+  }
+  
+  .star-rating i:not(:first-child) {
+    display: none;
+  }
+  
+  .star-rating.show-all-stars i:not(:first-child) {
+    display: inline-block;
+  }
+  
+  .rating {
+    margin-right:5px;
+  }

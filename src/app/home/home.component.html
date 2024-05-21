@@ -1,0 +1,67 @@
+ <section class="adminHeader vh-100" *ngIf="(currentUser | async)">
+    <p class="adminPar">Welcome to your favourite book library</p>
+    <button class="mybtn btn btn-primary" [routerLink]="['/mybooks']">My books</button>
+ </section>
+ 
+ <div class="bigbody">
+      <div class="popularbooks">
+        <h2 class="popularTitle">Popular Books</h2>
+      </div>
+
+      <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let book of popularBooks">
+          <ng-template carouselSlide>
+            <figure class="book-style">
+              <div class="popBookCont">
+              <a [routerLink]="['/book', book._id]"
+                ><img [src]="book.imageUrl" alt="Books" class="book-item" 
+              />
+            </a>
+            <p style="font-weight: bold; text-align: center;">{{book.name}}</p>
+            <div style="font-weight: bold; text-align: center;">
+            <i  class="material-icons star-filled" style="color: coral;">star</i>
+            <label for="star" class="rating">{{ book.avgRating }}/5</label>
+          </div>
+          <p style="font-weight: bold; text-align: center;">Rating no.<span style="border: 1px solid black"> {{book.ratingsCount}}</span></p>
+        </div>
+            </figure>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+      
+
+      <div class="popularbooks">
+        <h2 class="popularTitle">Popular Authors</h2>
+      </div>
+
+      <section>
+        <div style="display: flex; height: 350px; text-align: center;">
+            <app-author style="width: 24%;" class="auth" *ngFor="let author of popularAuthors" [author]="author"></app-author>
+        </div>
+      </section>
+
+
+     <!-- categories -->
+     <div class="popularbooks">
+      <h2 class="popularTitle">Popular Categories</h2>
+    </div>
+
+    <section>
+      <div style="display: flex; height: 50px; justify-content: space-around; flex-wrap: wrap;">
+          <app-category  class="catego" *ngFor="let category of categories" [category]="category"></app-category>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+</div> 
+  
